@@ -14,7 +14,10 @@ body {
 
 header {
   background-color: aquamarine;
-  position: fixed;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
 }
 
@@ -39,7 +42,6 @@ ul {
 }
 
 .section--a {
-  padding-top: 84px;
   background-color:beige;
 }
 
