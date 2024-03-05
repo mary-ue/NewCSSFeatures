@@ -56,3 +56,15 @@ ul {
 .section--d {
   background-color:gainsboro ;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* 
+  Часть медиа-запроса, который проверяет, не указал ли пользователь предпочтение 
+  к уменьшению анимации. Если пользователь не указал такое предпочтение (no-preference),
+  то это условие сработает.
+ */
