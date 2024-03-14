@@ -1,0 +1,134 @@
+/* https://codepen.io/jh3y/pen/OJrRvEV */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: hsl(0 0% 80%);
+  accent-color: hsl(250 90% 70%);
+}
+
+.controls {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 1rem;
+}
+
+.scroller {
+  width: 50ch;
+  height: 80vh;
+  overflow: auto;
+  position: relative;
+  background: canvas;
+  padding: 0 1rem;
+  resize: both;
+  color: hsl(0 0% 18%);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 2rem -1rem hsl(0 0% 10% / 0.75);
+}
+
+svg {
+  width: 24px;
+}
+
+.indicator {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: canvas;
+  height: 48px;
+  /* Scroll stuff */
+  --scroll-buffer: 2rem;
+  opacity: 0;
+  animation: reveal both linear;
+  animation-timeline: scroll(nearest);
+  animation-range: 0 var(--scroll-buffer);
+}
+
+.indicator--top {
+  top: 0;
+  border-bottom: 1px solid hsl(0 0% 0% / 0.5);
+}
+
+:root:has(#horizontal:checked) article {
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 800vw;
+}
+
+:root:has(#horizontal:checked) article p {
+  flex: 1 0 100cqi;
+  display: grid;
+  place-items: center;
+  padding: 4rem;
+  scroll-snap-align: center;
+}
+
+:root:has(#horizontal:checked) .scroller {
+  padding: 1rem 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+:root:has(#horizontal:checked) .indicator--bottom svg,
+:root:has(#horizontal:checked) .indicator--top svg {
+  rotate: -90deg;
+}
+
+:root:has(#horizontal:checked) .indicator {
+  height: 100%;
+  width: 2rem;
+  position: absolute;
+  animation-timeline: --article;
+  clip-path: inset(2rem 0 2rem 0);
+}
+
+:root:has(#horizontal:checked) .indicator--top {
+  border-bottom: none;
+  align-self: flex-start;
+  left: 0;
+  border-right: 1px solid hsl(0 0% 0% / 0.5);
+}
+
+
+:root:has(#horizontal:checked) .scroller {
+  container-type: inline-size;
+}
+
+.indicator--bottom {
+  bottom: 0;
+  border-top: 1px solid hsl(0 0% 0% / 0.5);
+  animation-range: calc(100% - var(--scroll-buffer)) 100%;
+  animation-direction: reverse;
+}
+
+:root:has(#horizontal:checked) .indicator--bottom {
+  right: 0;
+  bottom: unset;
+  border-left: 1px solid hsl(0 0% 0% / 0.5);
+  border-top: none;
+}
+
+:root:has(#horizontal:checked) article {
+  scroll-timeline: --article;
+  scroll-timeline-axis: inline;
+  width: 100%;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+  }
+}
