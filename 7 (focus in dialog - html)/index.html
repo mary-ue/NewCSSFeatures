@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus in dialog</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main>
+    <section>
+      <article class="content" inert> <!-- !! -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque explicabo suscipit numquam harum at eius aut
+          quasi, accusamus sint error facilis incidunt ipsam voluptates perferendis consectetur voluptatibus officia
+          nemo! Saepe?</p>
+
+      </article>
+      <dialog class="dialog" open>
+        <button class="btn-close">Закрыть</button>
+        <p>Это диалоговое окно открыто по умолчанию.</p>
+      </dialog>
+    </section>
+  </main>
+  <script>
+    const closeDialogButton = document.querySelector('.btn-close');
+    const myDialog = document.querySelector('.dialog');
+
+    closeDialogButton.addEventListener('click', () => {
+      myDialog.close();
+      myDialog.style.display = 'none';
+    });
+  </script>
+</body>
+
+</html>
